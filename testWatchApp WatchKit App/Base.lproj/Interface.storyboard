@@ -1,15 +1,27 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="testWatchApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" widthAdjustment="1" height="0.90000000000000002" heightAdjustment="1" alignment="left" text="156 BPM" textAlignment="right" baselineAdjustment="alignCenters" id="CVl-tu-Q9K">
+                            <color key="textColor" red="1" green="0.26652000172324664" blue="0.31043339983540752" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" type="boldSystem" pointSize="46"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="bmpLabel" destination="CVl-tu-Q9K" id="hSX-hi-be3"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="45" y="31"/>
         </scene>
     </scenes>
 </document>
