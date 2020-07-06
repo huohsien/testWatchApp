@@ -3,8 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Please grant Health Records permission</string>
+	<string>Please grant Health Share permission</string>
 	<key>NSHealthUpdateUsageDescription</key>
+	<string>Please grant Health Update permission</string>
+	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
 	<string>Please grant Health Records permission</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

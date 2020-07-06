@@ -11,7 +11,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="testWatchApp_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="1" widthAdjustment="1" height="0.90000000000000002" heightAdjustment="1" alignment="left" text="156 BPM" textAlignment="right" baselineAdjustment="alignCenters" id="CVl-tu-Q9K">
+                        <label width="1" widthAdjustment="1" height="0.90000000000000002" heightAdjustment="1" alignment="left" text="--- BPM" textAlignment="right" baselineAdjustment="alignCenters" id="CVl-tu-Q9K">
                             <color key="textColor" red="1" green="0.26652000172324664" blue="0.31043339983540752" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <fontDescription key="font" type="boldSystem" pointSize="46"/>
                         </label>

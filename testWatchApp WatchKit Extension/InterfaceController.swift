@@ -22,15 +22,15 @@ class InterfaceController: WKInterfaceController {
         print("awake")
         // Configure interface objects here.
         authorizeHealthKit()
+        subscribeToHeartBeatChanges()
+        healthStore.execute(heartRateQuery!)
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         print("willActivate")
-        //        startHeartRateQuery(quantityTypeIdentifier: .heartRate)
-        subscribeToHeartBeatChanges()
-        healthStore.execute(heartRateQuery!)
+
     }
     
     override func didDeactivate() {
@@ -72,7 +72,7 @@ class InterfaceController: WKInterfaceController {
                 DispatchQueue.main.async {
                     
                     /// Updating the UI with the retrieved value
-                    self?.bmpLabel.setText("\(Int(heartRate))")
+                    self?.bmpLabel.setText("\(Int(heartRate)) BMP")
                 }
             })
         }
@@ -97,7 +97,7 @@ class InterfaceController: WKInterfaceController {
         /// Set sorting by date.
         let sortDescriptor = NSSortDescriptor(
             key: HKSampleSortIdentifierStartDate,
-            ascending: false)
+            ascending: true)
         
         /// Create the query
         let query = HKSampleQuery(
@@ -113,20 +113,27 @@ class InterfaceController: WKInterfaceController {
                 var lastHeartRate = 0.0
                 
                 if results != nil {
-                    for result in results! {
+                    print("number of samples= ", results!.count)
+//                    for result in results! {
                         /// Converting the heart rate to bpm
                         let heartRateUnit = HKUnit(from: "count/min")
 
-                        let sample = result as! HKQuantitySample
+                        let sample = results!.last! as! HKQuantitySample
 
                         lastHeartRate = sample.quantity.doubleValue(for: heartRateUnit)
-                    }
+//                    }
                 }
+                print(lastHeartRate,"BPM")
+                self.printTimeStamp()
                 completion(lastHeartRate)
         }
         
         
         self.healthStore.execute(query)
+    }
+    func printTimeStamp() {
+        let timestamp = DateFormatter.localizedString(from: NSDate() as Date, dateStyle: .medium, timeStyle: .long)
+        print(timestamp)
     }
     
 }
